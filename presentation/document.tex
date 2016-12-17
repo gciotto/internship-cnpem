@@ -1,0 +1,128 @@
+%% LaTeX Beamer presentation template (requires beamer package)
+%% see http://bitbucket.org/rivanvx/beamer/wiki/Home
+%% idea contributed by H. Turgut Uyar
+%% template based on a template by Till Tantau
+%% this template is still evolving - it might differ in future releases!
+
+\documentclass{beamer}
+
+\mode<presentation>
+{
+\usetheme{Malmoe}
+
+\setbeamercovered{transparent}
+}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\selectlanguage{brazil}
+
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{hyphsubst}
+
+
+
+% font definitions, try \usepackage{ae} instead of the following
+% three lines if you don't like this look
+\usepackage{mathptmx}
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+
+\addtobeamertemplate{navigation symbols}{}{
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+}
+
+\useoutertheme{infolines}
+\setbeamercolor{footline}{fg=blue}
+\setbeamerfont{footline}{series=\bfseries}
+
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor%~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\setbeamertemplate{caption}[numbered]
+
+\title[Programa Unificado de Estágio - PUE 2016] {Desenvolvimento de
+\textit{software} e
+\textit{hardware} para os sistemas de Controle do \textit{UVX} e
+\textit{Sirius}}
+
+%\subtitle{}
+
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+%\author{F.~Author\inst{1} \and S.~Another\inst{2}}
+\author{Gustavo Ciotto Pinton}
+\institute{
+Grupo de Controle \\
+Laboratório Nacional de Luz Síncrotron - LNLS \\ 
+Centro Nacional de Pesquisa em Energia e Materias - CNPEM \\
+\vspace{12pt} 
+\url{http://git.cnpem.br/u/gustavo.pinton}} 
+
+\date{6 de dezembro de 2016}
+
+
+\usepackage{pgf}
+\newcommand{\nologo}{\setbeamertemplate{logo}{}}
+\logo{\pgfputat{\pgfxy(0,7.3)}{\pgfbox[right,base]{\includegraphics[height=1.0cm]{image/CNPEM_LNLS}}}}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Sumário}
+\tableofcontents
+
+\end{frame}
+
+\include{ntp}
+
+\include{prosac} 
+
+% \include{interface}
+
+% \include{monitoracao}
+
+\include{archiver}
+
+\include{beast}
+
+\include{bbb-sincronismo}
+
+%\include{outros}
+
+%\include{referencias}
+
+\include{agradecimento}
+
+
+\end{document}
